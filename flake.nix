@@ -4,7 +4,7 @@
 
   outputs = { self, nixpkgs, rust-overlay }:
     let
-      eachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
+      eachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
     in {
       devShells = eachSystem (system: {
         default =
